@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Test Cases - Brandon W. Adams</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .back-nav {
+            background: #2c3e50;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-btn:hover {
+            color: #3498db;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .test-case-section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .test-case-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .test-case-content {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 2rem;
+        }
+
+        .test-case-content h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .test-case-content h4 {
+            color: #2c3e50;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .test-case-content p {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .test-case-content ul,
+        .test-case-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .test-case-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .test-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .test-meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .test-meta-label {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .test-meta-value {
+            color: #555;
+        }
+
+        .priority-high {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .priority-medium {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .priority-low {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .test-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Discord Test Cases</h1>
+        <p>Communication Platform Testing Portfolio</p>
+    </header>
+
+    <div class="back-nav">
+        <a href="index.html" class="back-btn">← Back to Portfolio</a>
+    </div>
+
+    <div class="container">
+        <div class="test-case-section">
+            <h2>Discord Communication Platform Test Cases</h2>
+            
+            <div class="test-case-content">
+                <h3>Test Case 16: Discord Login - Valid Credentials</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">DISC-TC-001</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-high">High</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">Authentication</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User has valid Discord account</li>
+                    <li>User is on Discord login page</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Navigate to discord.com/login</li>
+                    <li>Enter valid email or phone number</li>
+                    <li>Enter valid password</li>
+                    <li>Click "Log In" button</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>User successfully logs in</li>
+                    <li>Discord home screen/server list loads</li>
+                    <li>User's avatar and username displayed</li>
+                    <li>Server list appears on left sidebar</li>
+                    <li>Friends list or last viewed channel opens</li>
+                    <li>Login session persists</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>Email: testuser@example.com</li>
+                    <li>Password: DiscordPass123!</li>
+                </ul>
+            </div>
+
+            <div class="test-case-content">
+                <h3>Test Case 17: Send Direct Message</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">DISC-TC-002</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-high">High</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">Messaging</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User is logged in</li>
+                    <li>User has at least one friend or contact</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Click on "Friends" icon in left sidebar</li>
+                    <li>Select a friend from list</li>
+                    <li>Type message in text input field at bottom</li>
+                    <li>Press Enter or click Send icon</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>Message appears in chat window immediately</li>
+                    <li>Message shows user avatar and username</li>
+                    <li>Timestamp displayed</li>
+                    <li>Message delivered to recipient</li>
+                    <li>"Typing..." indicator may appear for recipient</li>
+                    <li>Message persists in chat history</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>Message: "Hello, this is a test message"</li>
+                </ul>
+            </div>
+
+            <div class="test-case-content">
+                <h3>Test Case 18: Join Server via Invite Link</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">DISC-TC-003</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-medium">Medium</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">Server Management</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User is logged in</li>
+                    <li>User has valid invite link</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Click "+" button in server list (left sidebar)</li>
+                    <li>Select "Join a Server"</li>
+                    <li>Paste invite link in text field</li>
+                    <li>Click "Join Server" button</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>Server validation occurs</li>
+                    <li>User joins server successfully</li>
+                    <li>Server appears in server list</li>
+                    <li>User redirected to server's default channel</li>
+                    <li>Welcome message may appear (if configured)</li>
+                    <li>Server roles assigned (if applicable)</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>Invite Link: discord.gg/example123</li>
+                </ul>
+            </div>
+
+            <div class="test-case-content">
+                <h3>Test Case 19: Create Voice Channel</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">DISC-TC-004</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-medium">Medium</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">Voice/Channel Management</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User is logged in</li>
+                    <li>User has admin/manage channel permissions on a server</li>
+                    <li>User is viewing server</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Navigate to server where user has permissions</li>
+                    <li>Right-click on server name or channel category</li>
+                    <li>Select "Create Channel"</li>
+                    <li>Choose "Voice Channel" type</li>
+                    <li>Enter channel name</li>
+                    <li>Click "Create Channel"</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>Create channel dialog opens</li>
+                    <li>Voice channel option selectable</li>
+                    <li>Channel name field accepts input</li>
+                    <li>New voice channel appears in server channel list</li>
+                    <li>Channel is accessible to users based on permissions</li>
+                    <li>Voice channel icon (speaker) displayed</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>Channel Name: "Test Voice Chat"</li>
+                </ul>
+            </div>
+
+            <div class="test-case-content">
+                <h3>Test Case 20: React to Message with Emoji</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">DISC-TC-005</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-low">Low</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">User Interaction</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User is logged in</li>
+                    <li>User is viewing a text channel with messages</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Hover over any message in a channel</li>
+                    <li>Click on "Add Reaction" icon (emoji face with plus sign)</li>
+                    <li>Select an emoji from picker</li>
+                    <li>Observe reaction appear</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>Emoji picker opens</li>
+                    <li>Searchable emoji list displayed</li>
+                    <li>Selected emoji appears below message</li>
+                    <li>Reaction count shows "1"</li>
+                    <li>Clicking same emoji again adds to count</li>
+                    <li>User can remove reaction by clicking their reaction</li>
+                    <li>Reactions persist and visible to all users</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>Emoji: 👍 (thumbs up)</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Brandon W. Adams. All rights reserved.</p>
+    </footer>
+</body>
+</html>

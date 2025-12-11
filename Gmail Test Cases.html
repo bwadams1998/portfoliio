@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gmail Test Cases - Brandon W. Adams</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .back-nav {
+            background: #2c3e50;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-btn:hover {
+            color: #3498db;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .test-case-section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .test-case-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .test-case-content {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 2rem;
+        }
+
+        .test-case-content h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .test-case-content h4 {
+            color: #2c3e50;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .test-case-content p {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .test-case-content ul,
+        .test-case-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .test-case-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .test-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .test-meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .test-meta-label {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .test-meta-value {
+            color: #555;
+        }
+
+        .priority-high {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .priority-medium {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .priority-low {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .test-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Gmail Test Cases</h1>
+        <p>Email Application Testing Portfolio</p>
+    </header>
+
+    <div class="back-nav">
+        <a href="index.html" class="back-btn">← Back to Portfolio</a>
+    </div>
+
+    <div class="container">
+        <div class="test-case-section">
+            <h2>Gmail Email Application Test Cases</h2>
+            
+            <div class="test-case-content">
+                <h3>Test Case 6: Gmail Login - Valid Credentials</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">GMAIL-TC-001</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-high">High</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">Authentication</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User has valid Gmail account</li>
+                    <li>User is on Gmail login page</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Navigate to gmail.com</li>
+                    <li>Enter valid email address</li>
+                    <li>Click "Next"</li>
+                    <li>Enter valid password</li>
+                    <li>Click "Next"</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>User successfully logs in</li>
+                    <li>Gmail inbox loads</li>
+                    <li>Email count displayed</li>
+                    <li>Navigation menu visible (Inbox, Sent, Drafts, etc.)</li>
+                    <li>Profile picture/initial appears in top right</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>Email: testuser@gmail.com</li>
+                    <li>Password: SecurePass123!</li>
+                </ul>
+            </div>
+
+            <div class="test-case-content">
+                <h3>Test Case 7: Compose and Send Email</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">GMAIL-TC-002</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-high">High</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">Email Composition</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User is logged into Gmail</li>
+                    <li>In inbox view</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Click "Compose" button</li>
+                    <li>Enter recipient email in "To" field</li>
+                    <li>Enter subject line</li>
+                    <li>Type message in body</li>
+                    <li>Click "Send" button</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>Compose window opens</li>
+                    <li>All fields are editable</li>
+                    <li>Email sends successfully</li>
+                    <li>"Message sent" confirmation appears</li>
+                    <li>Email appears in "Sent" folder</li>
+                    <li>Compose window closes automatically</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>To: recipient@example.com</li>
+                    <li>Subject: Test Email</li>
+                    <li>Body: This is a test message.</li>
+                </ul>
+            </div>
+
+            <div class="test-case-content">
+                <h3>Test Case 8: Search Emails by Keyword</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">GMAIL-TC-003</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-medium">Medium</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">Search</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User is logged in</li>
+                    <li>User has emails in inbox</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Locate search bar at top of page</li>
+                    <li>Enter search keyword (e.g., "invoice")</li>
+                    <li>Press Enter or click search icon</li>
+                    <li>Review search results</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>Search executes within 1-2 seconds</li>
+                    <li>Results show emails containing keyword</li>
+                    <li>Search term highlighted in results</li>
+                    <li>Results display sender, subject, date, and snippet</li>
+                    <li>Can filter results by date, sender, attachment, etc.</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>Search Term: "invoice"</li>
+                </ul>
+            </div>
+
+            <div class="test-case-content">
+                <h3>Test Case 9: Attach File to Email</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">GMAIL-TC-004</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-medium">Medium</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">Email Composition</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User is logged in</li>
+                    <li>Compose window is open</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Click "Compose"</li>
+                    <li>Click attachment icon (paperclip)</li>
+                    <li>Select "Attach files"</li>
+                    <li>Choose file from computer (under 25MB)</li>
+                    <li>Wait for upload to complete</li>
+                    <li>Add recipient and send email</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>File browser opens</li>
+                    <li>Selected file uploads successfully</li>
+                    <li>Upload progress bar shows completion</li>
+                    <li>File name appears in compose window with file size</li>
+                    <li>Email sends with attachment</li>
+                    <li>File size under 25MB limit accepted</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>File: TestDocument.pdf (2MB)</li>
+                </ul>
+            </div>
+
+            <div class="test-case-content">
+                <h3>Test Case 10: Mark Email as Spam</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">GMAIL-TC-005</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-medium">Medium</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">Email Management</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User is logged in</li>
+                    <li>At least one email in inbox</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Open or select an email</li>
+                    <li>Click "Report spam" icon or button</li>
+                    <li>Observe email behavior</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>Email immediately moves to Spam folder</li>
+                    <li>Confirmation message appears</li>
+                    <li>Email removed from inbox</li>
+                    <li>Option to "Undo" appears briefly</li>
+                    <li>Future emails from sender may be auto-filtered</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>Email: Any email in inbox</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Brandon W. Adams. All rights reserved.</p>
+    </footer>
+</body>
+</html>

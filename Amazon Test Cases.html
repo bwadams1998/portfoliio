@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amazon Test Cases - Brandon W. Adams</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+        }
+
+        .back-nav {
+            background: #2c3e50;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-btn {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-btn:hover {
+            color: #3498db;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .test-case-section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .test-case-section h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .test-case-content {
+            background: #f8f9fa;
+            padding: 2rem;
+            border-radius: 8px;
+            border-left: 4px solid #667eea;
+            margin-bottom: 2rem;
+        }
+
+        .test-case-content h3 {
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+
+        .test-case-content h4 {
+            color: #2c3e50;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+        }
+
+        .test-case-content p {
+            color: #555;
+            margin-bottom: 1rem;
+            line-height: 1.8;
+        }
+
+        .test-case-content ul,
+        .test-case-content ol {
+            margin-left: 2rem;
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .test-case-content li {
+            margin-bottom: 0.5rem;
+            line-height: 1.6;
+        }
+
+        .test-meta {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            background: white;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .test-meta-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .test-meta-label {
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 0.9rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .test-meta-value {
+            color: #555;
+        }
+
+        .priority-high {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+
+        .priority-medium {
+            color: #f39c12;
+            font-weight: bold;
+        }
+
+        .priority-low {
+            color: #27ae60;
+            font-weight: bold;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .test-meta {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Amazon Test Cases</h1>
+        <p>E-commerce Testing Portfolio</p>
+    </header>
+
+    <div class="back-nav">
+        <a href="index.html" class="back-btn">← Back to Portfolio</a>
+    </div>
+
+    <div class="container">
+        <div class="test-case-section">
+            <h2>Amazon E-commerce Test Cases</h2>
+            
+            <div class="test-case-content">
+                <h3>Test Case 1: User Login - Valid Credentials</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">AMZ-TC-001</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-high">High</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">Authentication</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User has a valid Amazon account</li>
+                    <li>User is on Amazon homepage</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Navigate to www.amazon.com</li>
+                    <li>Click on "Sign in" button in top right corner</li>
+                    <li>Enter valid email/phone number</li>
+                    <li>Click "Continue"</li>
+                    <li>Enter valid password</li>
+                    <li>Click "Sign in"</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>User successfully logs in</li>
+                    <li>Redirected to Amazon homepage or previous page</li>
+                    <li>User name appears in top right corner</li>
+                    <li>"Hello, [User Name]" greeting displayed</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>Email: testuser@example.com</li>
+                    <li>Password: ValidPass123!</li>
+                </ul>
+            </div>
+
+            <div class="test-case-content">
+                <h3>Test Case 2: Product Search Functionality</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">AMZ-TC-002</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-high">High</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">Search</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User is on Amazon homepage</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Locate search bar at top of page</li>
+                    <li>Enter product name "wireless headphones"</li>
+                    <li>Click search icon or press Enter</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>Search results page loads within 2-3 seconds</li>
+                    <li>Results display relevant products matching search query</li>
+                    <li>Filters appear on left sidebar (Brand, Price, Reviews, etc.)</li>
+                    <li>Number of results shown (e.g., "1-48 of over 5,000 results")</li>
+                    <li>Products display with image, title, price, and rating</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>Search Query: "wireless headphones"</li>
+                </ul>
+            </div>
+
+            <div class="test-case-content">
+                <h3>Test Case 3: Add Item to Cart</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">AMZ-TC-003</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-high">High</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">Shopping Cart</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User is logged in</li>
+                    <li>User is viewing a product detail page</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Navigate to any product page</li>
+                    <li>Verify "Add to Cart" button is visible</li>
+                    <li>Select quantity (if applicable)</li>
+                    <li>Select product options (size, color, etc.) if required</li>
+                    <li>Click "Add to Cart" button</li>
+                    <li>Observe confirmation message</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>"Added to Cart" confirmation appears</li>
+                    <li>Cart icon in header updates with item count</li>
+                    <li>Option to "Proceed to checkout" or "Continue shopping" displayed</li>
+                    <li>Product successfully appears in cart when viewing cart page</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>Product: Any eligible product</li>
+                    <li>Quantity: 1</li>
+                </ul>
+            </div>
+
+            <div class="test-case-content">
+                <h3>Test Case 4: Apply Promo Code at Checkout</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">AMZ-TC-004</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-medium">Medium</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">Checkout</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User is logged in</li>
+                    <li>At least one item in cart</li>
+                    <li>Valid promo code available</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Click on cart icon</li>
+                    <li>Click "Proceed to Checkout"</li>
+                    <li>Verify shipping address</li>
+                    <li>Continue to payment page</li>
+                    <li>Locate "Add promo code" or "Gift card/Promo code" field</li>
+                    <li>Enter valid promo code</li>
+                    <li>Click "Apply"</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>Promo code validates successfully</li>
+                    <li>Discount applied to order total</li>
+                    <li>Updated price displayed</li>
+                    <li>Confirmation message "Your coupon has been applied"</li>
+                    <li>Order summary reflects discount</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>Promo Code: TEST10 (example)</li>
+                </ul>
+            </div>
+
+            <div class="test-case-content">
+                <h3>Test Case 5: Filter Search Results by Price</h3>
+                
+                <div class="test-meta">
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Test ID:</span>
+                        <span class="test-meta-value">AMZ-TC-005</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Priority:</span>
+                        <span class="test-meta-value priority-medium">Medium</span>
+                    </div>
+                    <div class="test-meta-item">
+                        <span class="test-meta-label">Module:</span>
+                        <span class="test-meta-value">Search/Filters</span>
+                    </div>
+                </div>
+
+                <h4>Preconditions:</h4>
+                <ul>
+                    <li>User has performed a product search</li>
+                    <li>On search results page</li>
+                </ul>
+
+                <h4>Test Steps:</h4>
+                <ol>
+                    <li>Perform search for "laptop"</li>
+                    <li>Locate price filter on left sidebar</li>
+                    <li>Select price range "$500 to $1000"</li>
+                    <li>Observe results update</li>
+                </ol>
+
+                <h4>Expected Result:</h4>
+                <ul>
+                    <li>Page refreshes or updates dynamically</li>
+                    <li>All displayed products fall within selected price range</li>
+                    <li>Filter selection highlighted/checked</li>
+                    <li>URL updates to reflect filter parameters</li>
+                    <li>Product count updates</li>
+                </ul>
+
+                <h4>Test Data:</h4>
+                <ul>
+                    <li>Search Term: "laptop"</li>
+                    <li>Price Range: $500-$1000</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Brandon W. Adams. All rights reserved.</p>
+    </footer>
+</body>
+</html>

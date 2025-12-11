@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brandon W. Adams - IT Support & QA Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            margin-bottom: 0.5rem;
+        }
+
+        .header-contact {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-top: 1rem;
+        }
+
+        nav {
+            background: #2c3e50;
+            padding: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #3498db;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        section {
+            background: white;
+            margin: 2rem 0;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 0.5rem;
+        }
+
+        .intro {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #555;
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-left: 4px solid #3498db;
+            border-radius: 4px;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .skill-card {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .skill-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.8rem;
+            font-size: 1.3rem;
+        }
+
+        .skill-card ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .skill-card li {
+            padding: 0.3rem 0;
+            color: #555;
+        }
+
+        .skill-card li:before {
+            content: "✓ ";
+            color: #3498db;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .experience-item {
+            background: #f8f9fa;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .experience-item h3 {
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+            font-size: 1.4rem;
+        }
+
+        .company {
+            color: #e74c3c;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .date {
+            color: #7f8c8d;
+            font-style: italic;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .experience-item ul {
+            margin-left: 1.2rem;
+            margin-top: 0.8rem;
+        }
+
+        .experience-item li {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        .education-item {
+            background: #f8f9fa;
+            padding: 1.2rem;
+            margin-bottom: 1rem;
+            border-radius: 8px;
+            border-left: 4px solid #27ae60;
+        }
+
+        .education-item h3 {
+            color: #2c3e50;
+            margin-bottom: 0.3rem;
+        }
+
+        .education-item p {
+            color: #555;
+        }
+
+        .cert-badge {
+            background: linear-gradient(135deg, #27ae60 0%, #229954 100%);
+            color: white;
+            padding: 1rem 1.5rem;
+            border-radius: 8px;
+            display: inline-block;
+            font-weight: 500;
+            margin-top: 0.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 8px;
+            transition: transform 0.3s;
+        }
+
+        .contact-item:hover {
+            transform: translateX(5px);
+            background: #e8f4f8;
+        }
+
+        .contact-item svg {
+            width: 24px;
+            height: 24px;
+            fill: #3498db;
+            flex-shrink: 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .highlight-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 3rem;
+        }
+
+        /* Test Cases Specific Styles */
+        .test-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .test-case-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .test-case-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        .test-case-header {
+            padding: 1.5rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .test-case-header h3 {
+            margin-bottom: 0.5rem;
+            font-size: 1.5rem;
+        }
+
+        .test-stats {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            opacity: 0.95;
+        }
+
+        .test-case-body {
+            padding: 1.5rem;
+        }
+
+        .test-case-body p {
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .view-cases-btn {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.95rem;
+            transition: background 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .view-cases-btn:hover {
+            background: #2980b9;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            nav ul {
+                gap: 1rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .test-cases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Brandon W. Adams</h1>
+        <p>IT Support Specialist | Quality Assurance Professional</p>
+        <div class="header-contact">
+            Huntington Beach, CA | 714-334-2137 | bwadams1998@gmail.com
+        </div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#test-cases">Test Cases</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="intro">
+                IT Support Specialist with hands-on experience troubleshooting hardware, software, and network issues, combined with practical QA skills in testing workflows, documenting problems, and verifying system functionality. Skilled at analyzing issues, following structured processes, and quickly learning new tools and technologies. Seeking to leverage IT expertise and QA knowledge in a role focused on quality assurance and system reliability.
+            </div>
+        </section>
+
+        <div class="highlight-box">
+            <h3>🎯 Dual Expertise: IT Support & Quality Assurance</h3>
+            <p>Combining technical troubleshooting skills with systematic testing methodologies to ensure optimal system performance and user satisfaction</p>
+        </div>
+
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>IT Support & Troubleshooting</h3>
+                    <ul>
+                        <li>Hardware & software diagnostics</li>
+                        <li>Network troubleshooting</li>
+                        <li>Windows OS configuration</li>
+                        <li>Active Directory management</li>
+                        <li>Printer & peripheral support</li>
+                        <li>Remote & on-site support</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Quality Assurance</h3>
+                    <ul>
+                        <li>Manual testing & validation</li>
+                        <li>Test case creation</li>
+                        <li>Bug reporting & tracking</li>
+                        <li>Workflow verification</li>
+                        <li>Documentation standards</li>
+                        <li>JIRA & ticketing systems</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Systems & Tools</h3>
+                    <ul>
+                        <li>Retail IT systems (POS, ERP, CRM, WMS)</li>
+                        <li>Ticketing systems & JIRA</li>
+                        <li>Network setup (routers, switches, Wi-Fi)</li>
+                        <li>Malware & security threat removal</li>
+                        <li>IT security protocols</li>
+                    </ul>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Professional Skills</h3>
+                    <ul>
+                        <li>Excellent customer service</li>
+                        <li>Problem-solving & analysis</li>
+                        <li>Technical documentation</li>
+                        <li>Team collaboration</li>
+                        <li>Multitasking abilities</li>
+                        <li>Clear communication</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="test-cases">
+            <h2>QA Test Cases Portfolio</h2>
+            <p style="color: #555; margin-bottom: 2rem;">Comprehensive test cases demonstrating my QA methodology and attention to detail across various platforms and applications.</p>
+            
+            <div class="test-cases-grid">
+                <div class="test-case-card">
+                    <div class="test-case-header">
+                        <h3>Amazon Testing</h3>
+                        <div class="test-stats">
+                            <span>📋 5 Test Cases</span>
+                            <span>🎯 E-commerce</span>
+                        </div>
+                    </div>
+                    <div class="test-case-body">
+                        <p>Comprehensive testing of e-commerce functionality including authentication, search, cart operations, checkout, and filtering capabilities.</p>
+                        <a href="Amazon Test Cases.html" target="_blank" class="view-cases-btn">View Test Cases</a>
+                    </div>
+                </div>
+
+                <div class="test-case-card">
+                    <div class="test-case-header">
+                        <h3>Gmail Testing</h3>
+                        <div class="test-stats">
+                            <span>📋 5 Test Cases</span>
+                            <span>✉️ Email</span>
+                        </div>
+                    </div>
+                    <div class="test-case-body">
+                        <p>Email application testing covering login, composition, search, attachments, and spam management features.</p>
+                        <a href="Gmail Test Cases.html" target="_blank" class="view-cases-btn">View Test Cases</a>
+                    </div>
+                </div>
+
+                <div class="test-case-card">
+                    <div class="test-case-header">
+                        <h3>YouTube Testing</h3>
+                        <div class="test-stats">
+                            <span>📋 5 Test Cases</span>
+                            <span>🎥 Video Platform</span>
+                        </div>
+                    </div>
+                    <div class="test-case-body">
+                        <p>Video platform testing including search, playback, subscriptions, user interactions, and quality settings.</p>
+                        <a href="Youtube Test Cases.html" target="_blank" class="view-cases-btn">View Test Cases</a>
+                    </div>
+                </div>
+
+                <div class="test-case-card">
+                    <div class="test-case-header">
+                        <h3>Discord Testing</h3>
+                        <div class="test-stats">
+                            <span>📋 5 Test Cases</span>
+                            <span>💬 Communication</span>
+                        </div>
+                    </div>
+                    <div class="test-case-body">
+                        <p>Communication platform testing covering authentication, messaging, server management, voice channels, and reactions.</p>
+                        <a href="Discord Test Cases.html" target="_blank" class="view-cases-btn">View Test Cases</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Projects & Demonstrations</h2>
+            
+            <div class="experience-item" style="border-left-color: #9b59b6;">
+                <h3>Home Lab Environment</h3>
+                <span class="company">Personal Project</span>
+                <span class="date">Ongoing</span>
+                <ul>
+                    <li>Built a virtualized home lab using VirtualBox/VMware to practice IT support scenarios</li>
+                    <li>Configured Active Directory domain with multiple user accounts and group policies</li>
+                    <li>Set up Windows Server and client machines to simulate enterprise environment</li>
+                    <li>Practiced troubleshooting common IT issues in a controlled testing environment</li>
+                    <li>Documented setup procedures and common fixes for personal knowledge base</li>
+                </ul>
+            </div>
+
+            <div class="experience-item" style="border-left-color: #9b59b6;">
+                <h3>QA Testing Portfolio - Bug Reports & Test Cases</h3>
+                <span class="company">Personal Project</span>
+                <span class="date">Ongoing</span>
+                <ul>
+                    <li>Created comprehensive test cases for popular applications (mobile apps, websites, software)</li>
+                    <li>Documented bugs found in public applications with detailed reproduction steps</li>
+                    <li>Practiced exploratory testing on various platforms (Windows, Android, iOS, web)</li>
+                    <li>Built a portfolio of sample bug reports demonstrating proper documentation standards</li>
+                    <li>Tested accessibility features and usability across different user scenarios</li>
+                </ul>
+            </div>
+
+            <div class="experience-item" style="border-left-color: #9b59b6;">
+                <h3>Network Security Hardening</h3>
+                <span class="company">Personal Project</span>
+                <span class="date">Ongoing</span>
+                <ul>
+                    <li>Configured home network with segmented VLANs for security and performance</li>
+                    <li>Implemented firewall rules and monitored network traffic for suspicious activity</li>
+                    <li>Set up VPN for secure remote access to home network resources</li>
+                    <li>Practiced malware removal techniques on isolated test systems</li>
+                    <li>Documented security best practices and incident response procedures</li>
+                </ul>
+            </div>
+
+            <div class="experience-item" style="border-left-color: #9b59b6;">
+                <h3>Automated Test Scripts</h3>
+                <span class="company">Personal Project</span>
+                <span class="date">In Progress</span>
+                <ul>
+                    <li>Learning Python to create automated test scripts for repetitive QA tasks</li>
+                    <li>Building scripts to validate web forms, login functionality, and data validation</li>
+                    <li>Exploring Selenium for browser automation and testing workflows</li>
+                    <li>Creating reusable test frameworks to improve testing efficiency</li>
+                    <li>Documenting code and test results for portfolio demonstration</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            
+            <div class="experience-item">
+                <h3>IT Support</h3>
+                <span class="company">Orange Coast Winery</span>
+                <span class="date">August 2023 - November 2024</span>
+                <ul>
+                    <li>Provided technical support to end-users via phone, email, and ticketing systems</li>
+                    <li>Configured, installed and updated Windows operating systems and software applications</li>
+                    <li>Set up new user accounts and permissions in Active Directory</li>
+                    <li>Documented technical problems and solutions for future reference</li>
+                    <li>Provided Level 1 support for hardware, software, printers, and network devices</li>
+                    <li>Ensured adherence to IT security protocols and company data policies</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>Computer Technician</h3>
+                <span class="company">Best Buy / Geek Squad</span>
+                <span class="date">February 2022 - April 2023</span>
+                <ul>
+                    <li>Worked with vendor support, system administrators, and store leadership to resolve high-priority support cases</li>
+                    <li>Provided clear, friendly technical support to users in person and remotely</li>
+                    <li>Set up and maintained networks, including routers, switches, and Wi-Fi systems</li>
+                    <li>Diagnosed and removed malware, viruses, and other security threats</li>
+                    <li>Troubleshot and repaired hardware/software issues on desktops, laptops, and peripherals</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <h3>IT Intern</h3>
+                <span class="company">Fry's Electronics</span>
+                <span class="date">November 2018 - February 2019</span>
+                <ul>
+                    <li>Set up and maintained visually appealing displays to attract customer interest</li>
+                    <li>Coordinated with the sales team to ensure product availability and rotation</li>
+                    <li>Assisted in receiving and stocking new inventory while following company guidelines</li>
+                    <li>Documented incidents accurately and followed IT policies and cybersecurity procedures</li>
+                    <li>Diagnosed and troubleshot hardware, software, and network issues</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Education & Certification</h2>
+            
+            <div class="education-item">
+                <h3>Bachelor's in Management Information Systems</h3>
+                <p><strong>Long Beach University</strong></p>
+            </div>
+
+            <div class="education-item">
+                <h3>Associate's in Computer Information Systems</h3>
+                <p><strong>Orange Coast College</strong></p>
+            </div>
+
+            <div class="education-item">
+                <h3>Associate's in Business Administration</h3>
+                <p><strong>Orange Coast College</strong></p>
+            </div>
+
+            <div style="margin-top: 2rem;">
+                <h3 style="color: #2c3e50; margin-bottom: 1rem;">Professional Certification</h3>
+                <div class="cert-badge">
+                    ✓ Google IT Support Professional Certificate - Coursera (November 2025)
+                </div>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                    <div>
+                        <strong>Email:</strong><br>
+                        bwadams1998@gmail.com
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+                    <div>
+                        <strong>Phone:</strong><br>
+                        714-334-2137
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                    <div>
+                        <strong>Location:</strong><br>
+                        Huntington Beach, CA 92648
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Brandon W. Adams. All rights reserved.</p>
+    </footer>
+</body>
+</html>
